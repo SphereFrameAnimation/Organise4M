@@ -43,6 +43,26 @@ class O4MRenameCmd(om.MPxCommand):
                 node.setName("_".join(nameLs))
                 index += 1
 
+        elif(argp.isFlagSet("s")):
+            suffix = argp.flagArgumentString("s", 0)
+            pad = argp.flagArgumentInt("s", 1)
+            index = 0
+            for sel in selItr:
+                node = om.MFnDependencyNode(sel.getDependNode())
+                node.setName(node.name() + "_" + suffix.replace("#", str(index).zfill(pad)))
+                index += 1
+
+        elif(argp.isFlagSet("se")):
+            suffix = argp.flagArgumentString("se", 0)
+            pad = argp.flagArgumentInt("se", 1)
+            index = 0
+            for sel in selItr:
+                node = om.MFnDependencyNode(sel.getDependNode())
+                nameLs = node.name().split("_")
+                nameLs[len(nameLs) - 1] = suffix.replace("#", str(index).zfill(pad))
+                node.setName("_".join(nameLs))
+                index += 1
+
         else:
             rstr = argp.commandArgumentString(0)
             pad = argp.commandArgumentInt(1)
