@@ -24,6 +24,6 @@ class O4MColourCmd(om.MPxCommand):
         for sel in selItr:
             dNode = om.MFnDagNode(sel.getDagPath().node())
             red = argp.commandArgumentFloat(0)
-            blue = argp.commandArgumentFloat(1)
-            green = argp.commandArgumentFloat(2)
+            green = argp.commandArgumentFloat(1)
+            blue = argp.commandArgumentFloat(2)
             dNode.objectColorRGB = om.MColor((red, green, blue, 1.0))
