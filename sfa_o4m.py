@@ -18,7 +18,7 @@ def initializePlugin(plugin):
         pluginFn.registerCommand(O4MGetColourCmd.kPluginCmdName, O4MGetColourCmd.creator)
 
     except:
-        print("Error Initializing O4M")
+        om.MGlobal.displayError("Error Initializing O4M")
         raise
 
 def uninitializePlugin(plugin):
@@ -30,5 +30,5 @@ def uninitializePlugin(plugin):
         pluginFn.deregisterCommand(O4MGetColourCmd.kPluginCmdName)
 
     except:
-        print("Error Uninitializing O4M")
+        om.MGlobal.displayError("Error Uninitializing O4M")
         raise

@@ -11,4 +11,4 @@ class O4MCheckCmd(om.MPxCommand):
         return O4MCheckCmd()
 
     def doIt(self, args):
-        print("Organise4M is loaded!")
+        om.MGlobal.displayInfo("Organise4M is loaded!")
