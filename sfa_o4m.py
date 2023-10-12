@@ -1,6 +1,7 @@
 from o4m_scripts.o4m_check import O4MCheckCmd
 from o4m_scripts.o4m_colour import O4MColourCmd
 from o4m_scripts.o4m_rename import O4MRenameCmd
+from o4m_scripts.o4m_getcolour import O4MGetColourCmd
 import maya.api.OpenMaya as om
 
 def maya_useNewAPI():
@@ -14,6 +15,7 @@ def initializePlugin(plugin):
         pluginFn.registerCommand(O4MCheckCmd.kPluginCmdName, O4MCheckCmd.creator)
         pluginFn.registerCommand(O4MRenameCmd.kPluginCmdName, O4MRenameCmd.creator)
         pluginFn.registerCommand(O4MColourCmd.kPluginCmdName, O4MColourCmd.creator)
+        pluginFn.registerCommand(O4MGetColourCmd.kPluginCmdName, O4MGetColourCmd.creator)
 
     except:
         print("Error Initializing O4M")
@@ -25,7 +27,7 @@ def uninitializePlugin(plugin):
     try:
         pluginFn.deregisterCommand(O4MCheckCmd.kPluginCmdName)
         pluginFn.deregisterCommand(O4MRenameCmd.kPluginCmdName)
-        pluginFn.deregisterCommand(O4MColourCmd.kPluginCmdName)
+        pluginFn.deregisterCommand(O4MGetColourCmd.kPluginCmdName)
 
     except:
         print("Error Uninitializing O4M")
