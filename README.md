@@ -1,4 +1,6 @@
-# Organise4M
+<img src="o4micon.png" width=100px><br>
+Organise4M
+==========
 Organisation tools for Maya
 
 ## Installation Instructions
