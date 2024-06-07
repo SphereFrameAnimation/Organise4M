@@ -27,6 +27,7 @@ def uninitializePlugin(plugin):
     try:
         pluginFn.deregisterCommand(O4MCheckCmd.kPluginCmdName)
         pluginFn.deregisterCommand(O4MRenameCmd.kPluginCmdName)
+        om.MMessage.removeCallback(O4MRenameCmd.openSceneCB)
         pluginFn.deregisterCommand(O4MGetColourCmd.kPluginCmdName)
 
     except:
